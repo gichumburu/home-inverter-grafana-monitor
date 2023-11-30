@@ -32,7 +32,7 @@ services:
     volumes:
       - "metrics:/var/lib/influxdb"
   grafana:
-    image: grafana/grafana:latest
+    image: grafana/grafana-arm32v7-linux:latest
     restart: always
     ports:
       - "3000:3000" # expose for localhost
