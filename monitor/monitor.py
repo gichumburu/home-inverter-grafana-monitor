@@ -19,8 +19,8 @@ USB_DEVICE = os.environ.get("USB_DEVICE", "/dev/ttyUSB0")
 # DB_USERNAME = os.environ.get("DB_USERNAME", "root")
 # DB_PASSWORD = os.environ.get("DB_PASSWORD", "root")
 # DB_NAME = os.environ.get("DB_NAME", "ups")
-INVERTER_MODEL = os.environ.get("INVERTER_MODEL", "monitor-pv1800")
-
+#INVERTER_MODEL = os.environ.get("INVERTER_MODEL", "monitor-pv1800")
+INVERTER_MODEL = "must-pv1800"
 #client = InfluxDBClient(DB_HOST, DB_PORT, DB_USERNAME, DB_PASSWORD, DB_NAME)
 
 if INVERTER_MODEL not in SUPPORTED_INVERTERS:
@@ -55,4 +55,4 @@ json_body = [
 
 print(json_body)
 
-#client.write_po
+#client.write_points(json_body)
