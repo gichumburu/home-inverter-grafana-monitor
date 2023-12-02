@@ -1,4 +1,4 @@
-
+import json
 from . import Sample, UPS
 
 
@@ -18,6 +18,16 @@ class MustPV1800(UPS):
         }
 
         soc = self.scc.read_registers(25200, 75)
+        
+ # Create a dictionary with SOC data
+        soc_data = {
+            "StateOfCharge": soc  # Update with the correct SOC array
+        }
+
+        # Save SOC data to a JSON file
+        file_path = "soc_data.json"  # Choose a file path/name
+        with open(file_path, 'w') as json_file:
+            json.dump(soc_data, json_file)
 
         batVolts = soc[5] / 10.0
         inputVolts = soc[7] // 10
