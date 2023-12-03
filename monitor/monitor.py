@@ -48,7 +48,11 @@ json_body = [
             "output_va": sample.output_va,
             "output_w": sample.output_w,
             "temp": sample.temp,
-            "discharge": sample.discharge
+            "discharge": sample.discharge,
+            "pv_Voltage": sample.pvVoltage,
+            "radiatorTemp": sample.radiatorTemp,
+            "pvChargeCurrent": sample.pvChargeCurrent
+            "pvBattVoltage": sample.pvBattVoltage
         }
     }
 ]
@@ -56,3 +60,8 @@ json_body = [
 print(json_body)
 
 #client.write_points(json_body)
+
+            # pvVoltage,
+            # radiatorTemp,
+            # pvChargeCurrent,
+            # pvBattVoltage
