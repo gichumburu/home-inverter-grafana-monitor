@@ -51,7 +51,7 @@ json_body = [
             "discharge": sample.discharge,
             "pv_Voltage": sample.pvVoltage,
             "radiatorTemp": sample.radiatorTemp,
-            "pvChargeCurrent": sample.pvChargeCurrent
+            "pvChargeCurrent": sample.pvChargeCurrent,
             "pvBattVoltage": sample.pvBattVoltage
         }
     }
