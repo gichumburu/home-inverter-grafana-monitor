@@ -52,7 +52,8 @@ json_body = [
             "pv_Voltage": sample.pvVoltage,
             "radiatorTemp": sample.radiatorTemp,
             "pvChargeCurrent": sample.pvChargeCurrent,
-            "pvBattVoltage": sample.pvBattVoltage
+            "pvBattVoltage": sample.pvBattVoltage,
+            "pvChargePower": sample.pvChargePower
         }
     }
 ]
@@ -61,7 +62,3 @@ print(json_body)
 
 #client.write_points(json_body)
 
-            # pvVoltage,
-            # radiatorTemp,
-            # pvChargeCurrent,
-            # pvBattVoltage

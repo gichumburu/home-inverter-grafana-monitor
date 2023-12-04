@@ -24,6 +24,16 @@ class Sample(object):
     discharge: int
     # inverter state
     state: str
+    #pv Voltage levels
+    pvVoltage: float
+    #pv power levels
+    pvChargePower: float
+    #pv inveter temp (comparing this figure with temp above)
+    radiatorTemp: float
+    #pv charging current
+    pvChargeCurrent: float
+    #pv charging batt level
+    pvBattVoltage: float
 
 
 class UPS(object):

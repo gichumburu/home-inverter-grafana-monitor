@@ -99,6 +99,7 @@ class MustPV1800(UPS):
         pvVoltage = soc_15200 [5]/1000
         radiatorTemp = soc_15200[9]
         pvChargeCurrent = soc_15200[7]/10
+        pvChargePower = soc_15200[8]/1000
         pvBattVoltage = soc_15200[6]
         batVolts = soc_25200[5] / 10.0
         inputVolts = soc_25200[7] // 10
@@ -125,6 +126,7 @@ class MustPV1800(UPS):
             discharge,
             state,
             pvVoltage,
+            pvChargePower,
             radiatorTemp,
             pvChargeCurrent,
             pvBattVoltage
