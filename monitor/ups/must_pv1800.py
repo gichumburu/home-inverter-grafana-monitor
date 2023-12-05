@@ -1,4 +1,4 @@
-import json
+#import json #enable if you need to dump to a json file
 import time
 
 from . import Sample, UPS
@@ -89,16 +89,18 @@ class MustPV1800(UPS):
         soc_25200_data = {
             "StateOfCharge": soc_25200  # Update with the correct soc_25200 array
         }
+############################################################################################
+#Uncomment this block when you need to dump the data to a json file for reviews etc
+        # # Save soc_25200 data to a JSON file
+        # file_path = "soc_25200_data.json"  # Choose a file path/name
+        # with open(file_path, 'w') as json_file:
+        #     json.dump(soc_25200_data, json_file)
 
-        # Save soc_25200 data to a JSON file
-        file_path = "soc_25200_data.json"  # Choose a file path/name
-        with open(file_path, 'w') as json_file:
-            json.dump(soc_25200_data, json_file)
-
-        # Save soc_25200 data to a JSON file
-        file_path = "soc_15200_data.json"  # Choose a file path/name
-        with open(file_path, 'w') as json_file:
-            json.dump(soc_15200_data, json_file)
+        # # Save soc_25200 data to a JSON file
+        # file_path = "soc_15200_data.json"  # Choose a file path/name
+        # with open(file_path, 'w') as json_file:
+        #     json.dump(soc_15200_data, json_file)
+############################################################################################
 
         pvVoltage = soc_15200 [5]/10
         radiatorTemp = soc_15200[9]
