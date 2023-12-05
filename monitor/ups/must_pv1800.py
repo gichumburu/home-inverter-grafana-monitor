@@ -1,4 +1,6 @@
 import json
+import time
+
 from . import Sample, UPS
 
 
@@ -76,6 +78,8 @@ class MustPV1800(UPS):
         # 25274: ["Battery current", 1, "A"],
         
         soc_15200 = self.scc.read_registers(15200, 12)
+        #2 seconds seems to be the ideal wait time for this inverter. timeoute errors occasionaly came up with 1s wait
+        time.sleep(2)
         soc_25200 = self.scc.read_registers(25200, 75)
 
  # Create a dictionary with soc data
@@ -96,11 +100,11 @@ class MustPV1800(UPS):
         with open(file_path, 'w') as json_file:
             json.dump(soc_15200_data, json_file)
 
-        pvVoltage = soc_15200 [5]/1000
+        pvVoltage = soc_15200 [5]/10
         radiatorTemp = soc_15200[9]
         pvChargeCurrent = soc_15200[7]/10
         pvChargePower = soc_15200[8]/1000
-        pvBattVoltage = soc_15200[6]
+        pvBattVoltage = soc_15200[6]/10
         batVolts = soc_25200[5] / 10.0
         inputVolts = soc_25200[7] // 10
         batAmps = soc_25200[74]
